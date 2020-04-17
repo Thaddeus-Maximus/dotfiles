@@ -1,0 +1,20 @@
+# TIP: use xbindkeys --key (or --multikey) to figure out keycodes.
+
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+   Control + F12
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+   XF86AudioRaiseVolume
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+   Control + F11
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+   XF86AudioLowerVolume
+
+"flameshot gui"
+	Print
+
+# Increase backlight
+"xbacklight -inc 10"
+   XF86MonBrightnessUp
+# Decrease backlight
+"xbacklight -dec 10"
+   XF86MonBrightnessDown
