@@ -68,14 +68,11 @@ apt-key add - < Release.key
 apt-get update
 apt-get install owncloud-client
 
-
+# To set power options with systemd, modify /etc/systemd/logind.conf. Refer to man logind.conf.
 
 
 
 
 #TODO: DWM focus-and-select on mouseclick
-#TODO: DWM monitors better
-#TODO: Volume popup meter
-#TODO: Faster touchpad
-#TODO: dotfiles repo
-#BUG: Grave is pause/break, but I can't seem to get shift+pausebreak to be tilde. ctrl+pausebreak is tilde.
+#TODO: Faster touchpad 
+# BUG: Grave is pause/break, but I can't seem to get shift+pausebreak to be tilde. ctrl+pausebreak is tilde.
