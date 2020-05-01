@@ -9,4 +9,5 @@ slstatus 2>&1 >/dev/null &
 pulseaudio --kill
 pulseaudio --start
 eval "$(ssh-agent -s)"
+xset -dpms
 exec dwm
