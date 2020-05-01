@@ -1,0 +1,25 @@
+#!/bin/sh
+
+MODE=${1:-help}
+
+case $MODE in
+	modes|-h|help)
+		echo "usage: confdisp <mode>"
+		echo "available modes: dvi_extend|dock_dvi_extend dvi_only|dock_dvi_only laptop|laptop_only"
+		;;
+	dvi_extend|dock_dvi_extend)
+		echo "Dock DVI and builtin laptop display..."
+		xrandr --output DP2-2 --mode 1920x1080 --rate 60.00
+		xrandr --output eDP1 --auto --left-of DP2-2
+		;;
+	dvi_only|dock_dvi_only)
+		echo "Dock's DVI output only..."
+		xrandr --output eDP1 --off
+		xrandr --output DP2-2 --mode 1920x1080 --rate 60.00
+		;;
+	laptop|laptop_only)
+		echo "Laptop display only..."
+		xrandr --output eDP-1 --mode 1920x1080 --rate 60.00
+		xrandr --output DP2-2 --off
+		;;
+esac

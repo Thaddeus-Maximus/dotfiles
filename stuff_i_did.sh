@@ -70,9 +70,13 @@ apt-get install owncloud-client
 
 # To set power options with systemd, modify /etc/systemd/logind.conf. Refer to man logind.conf.
 
+# To enable backlight, add this to /usr/share/X11/xorg.conf.d/40-libinput.conf
 
+Section "Device"
+	Identifier "card0"
+	Driver "intel"
+	Option "Backliht" "intel_backlight"
+	BusID "PCI:0:2:0"
+EndSection
 
-
-#TODO: DWM focus-and-select on mouseclick
-#TODO: Faster touchpad 
 # BUG: Grave is pause/break, but I can't seem to get shift+pausebreak to be tilde. ctrl+pausebreak is tilde.
