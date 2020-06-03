@@ -80,3 +80,27 @@ Section "Device"
 EndSection
 
 # BUG: Grave is pause/break, but I can't seem to get shift+pausebreak to be tilde. ctrl+pausebreak is tilde.
+
+sudo apt install network-manager-gnome
+# REFERENCES
+# https://www.redhat.com/sysadmin/becoming-friends-networkmanager
+# nmcli radio wifi off
+# nmcli radio wifi on
+
+# install sxiv http://muennich.github.io/sxiv/sxiv.1.html
+sudo apt install libexif-dev libimlib2-dev
+git clone https://github.com/muennich/sxiv.git
+cd sxiv
+make
+sudo make install
+
+# brave
+sudo apt install apt-transport-https curl
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
+
+# redshift
+sudo apt install redshift
+redshift -l 43.008663:-71.454391
