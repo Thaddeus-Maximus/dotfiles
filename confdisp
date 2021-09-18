@@ -5,7 +5,7 @@ MODE=${1:-help}
 case $MODE in
 	modes|-h|help)
 		echo "usage: confdisp <mode>"
-		echo "available modes: dvi_extend|dock_dvi_extend dvi_only|dock_dvi_only laptop|laptop_only"
+		echo "available modes: dvi_extend|dock_dvi_extend dvi_only|dock_dvi_only laptop|laptop_only minidp"
 		;;
 	dvi_extend|dock_dvi_extend)
 		echo "Dock DVI and builtin laptop display..."
@@ -17,9 +17,18 @@ case $MODE in
 		xrandr --output eDP1 --off
 		xrandr --output DP2-2 --mode 1920x1080 --rate 60.00
 		;;
+	minidp_extend)
+		echo "Builtin miniDP port..."
+		xrandr --output DP1 --mode 1920x1080 --rate 60.00
+		xrandr --output eDP1 --mode 1920x1080 --rate 60.00 --left-of DP1
+		;;
 	laptop|laptop_only)
 		echo "Laptop display only..."
-		xrandr --output eDP-1 --mode 1920x1080 --rate 60.00
-		xrandr --output DP2-2 --off
+		xrandr --output eDP1 --mode 1920x1080 --rate 60.00
+#		xrandr --output DP2-2 --off
 		;;
+	vga_extend)
+		echo "VGA Extension..."
+		xrandr --output eDP1 --mode 1920x1080 --rate 60.00
+		xrandr --output VGA1 --mode 1280x1024 --rate 60.02 --right-of eDP1
 esac

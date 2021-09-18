@@ -82,6 +82,8 @@ EndSection
 # BUG: Grave is pause/break, but I can't seem to get shift+pausebreak to be tilde. ctrl+pausebreak is tilde.
 
 sudo apt install network-manager-gnome
+# run nm-connection-editor
+
 # REFERENCES
 # https://www.redhat.com/sysadmin/becoming-friends-networkmanager
 # nmcli radio wifi off

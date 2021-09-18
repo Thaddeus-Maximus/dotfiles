@@ -1,5 +1,5 @@
 compton &
-feh --bg-fill /media/D/Photos/scifi/ship_ls.jpeg
+feh --bg-fill /home/thad/bg.jpg
 if [ -f ~/.xmodmap ]; then
     xmodmap ~/.xmodmap
 fi
